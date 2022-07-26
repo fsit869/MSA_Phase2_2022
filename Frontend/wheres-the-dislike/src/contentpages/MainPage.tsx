@@ -7,7 +7,7 @@ import Header from "../components/Header";
  */
 function MainPage() {
     return (
-        <div>
+        <div style={{backgroundColor: "#875454"}}>
             <h1>This is the main page</h1>
             <h1>This is the main page</h1>
         </div>

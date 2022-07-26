@@ -13,7 +13,7 @@ const Header = ():JSX.Element => {
 
     return <React.Fragment>
         <CssBaseline/>
-        <AppBar position="relative" sx={{backgroundColor: "#FF0000"}}>
+        <AppBar position="relative" sx={{backgroundColor: "#a12020"}}>
             <Toolbar>
                 <IconButton
                     edge="start"
