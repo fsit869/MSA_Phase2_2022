@@ -4,9 +4,8 @@ import Header from "./components/Header";
 
 function App() {
     return (
-        <div style={{backgroundColor: "#875454"}} >
+        <div>
             <Header/>
-            <h1>Hello World</h1>
             <MainPage/>
         </div>
     );
