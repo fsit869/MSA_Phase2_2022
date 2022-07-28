@@ -1,15 +1,8 @@
 import {Card, CardActions, CardContent, CardHeader, IconButton, Typography} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import VideoObject from "../api/VideoObject";
 
-interface VideoComponentProps {
-    videoLink: string;
-    dateReleased: string;
-    likes: number;
-    dislikes: number;
-    views: number;
-}
-
-export const VideoComponent = (props: VideoComponentProps) => {
+export const VideoComponent = (videoObject:VideoObject) => {
 
     return <Card sx={{
         maxWidth: 340,
@@ -20,7 +13,7 @@ export const VideoComponent = (props: VideoComponentProps) => {
         {/*Header*/}
         <CardHeader
             title="Video One"
-            subheader={"Date Created: " + props.dateReleased}
+            subheader={"Date Created: " + videoObject.dateReleased}
             subheaderTypographyProps={{variant: "subtitle2"}}
             sx={{
                 backgroundColor: "lightyellow",
@@ -50,11 +43,11 @@ export const VideoComponent = (props: VideoComponentProps) => {
         >
             {/* Ranking text */}
             <Typography variant="body2" align="left" component="p">
-                Likes: {props.likes}
+                Likes: {videoObject.likes}
             </Typography>
 
             <Typography variant="body2" align="left" component="p">
-                Dislikes: {props.dislikes}
+                Dislikes: {videoObject.dislikes}
             </Typography>
 
             {/* Delete button */}
