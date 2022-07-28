@@ -29,7 +29,7 @@ export const VideoComponent = (videoObject:VideoObject) => {
             backgroundColor: "lightyellow",
         }}>
             <iframe
-                src="https://www.youtube.com/embed/E7wJTIfff-1dvQ"
+                src={"https://www.youtube.com/embed/"+videoObject.videoID}
                 allowFullScreen={true}
             />
         </CardContent>

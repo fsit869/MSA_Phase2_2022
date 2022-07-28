@@ -1,13 +1,13 @@
 export default class VideoObject {
 
-    public videoLink: string;
+    public videoID: string;
     public dateReleased: string;
     public likes: number;
     public dislikes: number;
     public views: number;
 
-    constructor(videoLink: string, dateReleased: string, likes: number, dislikes: number, views: number) {
-        this.videoLink = videoLink;
+    constructor(videoID: string, dateReleased: string, likes: number, dislikes: number, views: number) {
+        this.videoID = videoID;
         this.dateReleased = dateReleased;
         this.likes = likes;
         this.dislikes = dislikes;
