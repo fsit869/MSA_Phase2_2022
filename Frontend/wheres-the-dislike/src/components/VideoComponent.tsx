@@ -26,7 +26,7 @@ export const VideoComponent = (props: Props) => {
     // let apiData = null;
     useEffect(() => {
         // Update the document title using the browser API
-        getVideoInformation("QH2-TGUlwu4", setVideoDetails, setLoading);
+        getVideoInformation(props.videoID, setVideoDetails, setLoading);
     }, []);
 
     if (loading) return <p>Loading</p>
@@ -39,8 +39,8 @@ export const VideoComponent = (props: Props) => {
     }}>
         {/*Header*/}
         <CardHeader
-            title="Video One"
-            subheader={"Date Created: " + videoDetails.dateCreated.substring(0, 10)}
+            title="Video"
+            subheader={"wow a subheading"}
             subheaderTypographyProps={{variant: "subtitle2"}}
             sx={{
                 backgroundColor: "lightyellow",

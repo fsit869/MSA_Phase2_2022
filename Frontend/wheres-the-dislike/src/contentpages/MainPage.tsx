@@ -18,6 +18,13 @@ function MainPage() {
                     <VideoComponent videoID={"QH2-TGUlwu4"} ></VideoComponent>
                 </Grid>
 
+                <Grid item>
+                    <VideoComponent videoID={"8dVQ0813KVM"} ></VideoComponent>
+                </Grid>
+
+                <Grid item>
+                    <VideoComponent videoID={"QH2-TGUlwu4"} ></VideoComponent>
+                </Grid>
             </Grid>
         </div>
     );
