@@ -1,8 +1,35 @@
-import {Card, CardActions, CardContent, CardHeader, IconButton, Typography} from "@mui/material";
+import {
+    Box,
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    Stack,
+    CardHeader,
+    Container,
+    IconButton,
+    Typography, Grid
+} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import VideoObject from "../api/VideoObject";
+import {useEffect, useState} from "react";
+import getVideoInformation from "../api/YoutubeDislikeApi";
+import {wait} from "@testing-library/user-event/dist/utils";
 
-export const VideoComponent = (videoObject:VideoObject) => {
+interface Props {
+    videoID: string
+}
+
+export const VideoComponent = (props: Props) => {
+    const [loading, setLoading] = useState(true);
+    const [videoDetails, setVideoDetails] = useState<undefined | any>(undefined);
+    // let apiData = null;
+    useEffect(() => {
+        // Update the document title using the browser API
+        getVideoInformation("QH2-TGUlwu4", setVideoDetails, setLoading);
+    }, []);
+
+    if (loading) return <p>Loading</p>
 
     return <Card sx={{
         maxWidth: 340,
@@ -13,7 +40,7 @@ export const VideoComponent = (videoObject:VideoObject) => {
         {/*Header*/}
         <CardHeader
             title="Video One"
-            subheader={"Date Created: " + videoObject.dateReleased}
+            subheader={"Date Created: " + videoDetails.dateCreated.substring(0, 10)}
             subheaderTypographyProps={{variant: "subtitle2"}}
             sx={{
                 backgroundColor: "lightyellow",
@@ -29,7 +56,7 @@ export const VideoComponent = (videoObject:VideoObject) => {
             backgroundColor: "lightyellow",
         }}>
             <iframe
-                src={"https://www.youtube.com/embed/"+videoObject.videoID}
+                src={"https://www.youtube.com/embed/" + props.videoID}
                 allowFullScreen={true}
             />
         </CardContent>
@@ -41,19 +68,23 @@ export const VideoComponent = (videoObject:VideoObject) => {
                 textAlign: "right",
             }}
         >
-            {/* Ranking text */}
-            <Typography variant="body2" align="left" component="p">
-                Likes: {videoObject.likes}
-            </Typography>
 
             <Typography variant="body2" align="left" component="p">
-                Dislikes: {videoObject.dislikes}
+                Likes: {videoDetails.likes}
             </Typography>
+            <Typography variant="body2" align="left" component="p">
+                Dislikes: {videoDetails.dislikes}
+            </Typography>
+            <Typography variant="body2" align="left" component="p">
+                Rating: {videoDetails.rating.toString().substring(0, 3)}
+            </Typography>
+
 
             {/* Delete button */}
-            <IconButton aria-label="Delete Task" >
+            <IconButton aria-label="Delete Task">
                 <DeleteIcon></DeleteIcon>
             </IconButton>
+
         </CardActions>
     </Card>;
 }
