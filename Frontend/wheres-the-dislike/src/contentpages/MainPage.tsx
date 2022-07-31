@@ -1,31 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "../components/Header";
 import {VideoComponent} from "../components/VideoComponent";
-import {Box, Grid} from "@mui/material";
+import {Box, Button, Grid} from "@mui/material";
 import getVideoInformation from "../api/YoutubeDislikeApi";
+import {NewTask} from "../components/NewTask";
 
 /**
  * This contains all the content of the main page.
  * @author Frank Situ
  */
 function MainPage() {
+    const [videoList, setVideoList] = useState<any | any>([])
+
+    const addNewComponentToList = (videoID: string) => {
+        let newVideo = <VideoComponent videoID={videoID} ></VideoComponent>
+        setVideoList([...videoList, newVideo]);
+    }
+
+    const deleteComponentInList = (componentID: string) => {
+
+    }
+
+
     return (
         <div>
             <Box p={4}/>
 
             <Grid container spacing={2} justifyContent="center" >
+
+                {videoList.map((currentVideo: JSX.Element) => (
+                    <Grid item>
+                        {currentVideo}
+                    </Grid>
+                ))}
+
+
                 <Grid item>
-                    <VideoComponent videoID={"QH2-TGUlwu4"} ></VideoComponent>
+                    <Button onClick={() => {
+                        console.log(videoList);
+                    }}>ew</Button>
                 </Grid>
 
                 <Grid item>
-                    <VideoComponent videoID={"8dVQ0813KVM"} ></VideoComponent>
-                </Grid>
-
-                <Grid item>
-                    <VideoComponent videoID={"kxOuG8jMIgI"} ></VideoComponent>
+                    <Button onClick={() => {
+                        addNewComponentToList("QH2-TGUlwu4");
+                    }}>ewaddd</Button>
                 </Grid>
             </Grid>
+            {/* New task FAB */}
+            <NewTask onNewNote={addNewComponentToList}></NewTask>
+
         </div>
     );
 }
