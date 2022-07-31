@@ -23,7 +23,7 @@ function MainPage() {
                 </Grid>
 
                 <Grid item>
-                    <VideoComponent videoID={"QH2-TGUlwu4"} ></VideoComponent>
+                    <VideoComponent videoID={"kxOuG8jMIgI"} ></VideoComponent>
                 </Grid>
             </Grid>
         </div>

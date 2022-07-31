@@ -76,9 +76,10 @@ export const VideoComponent = (props: Props) => {
                 Dislikes: {videoDetails.dislikes}
             </Typography>
             <Typography variant="body2" align="left" component="p">
-                Rating: {videoDetails.rating.toString().substring(0, 3)}
+                Rating: {videoDetails.rating.toString().substring(0, 3)} / 5
             </Typography>
 
+            <Box p={5}></Box>
 
             {/* Delete button */}
             <IconButton aria-label="Delete Task">
