@@ -8,6 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+
+// Dependency Injection. Link reddit with this URI
+builder.Services.AddHttpClient("reddit", configureClient: client =>
+{
+    client.BaseAddress = new Uri("https://returnyoutubedislikeapi.com");
+});
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
