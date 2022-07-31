@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApplication1.Controllers;
 
 /// <summary>
-/// This is the weather forecast controller that comes as a default from the project template when creating
-/// a new c# Web API application.
+///     This is the weather forecast controller that comes as a default from the project template when creating
+///     a new c# Web API application.
 /// </summary>
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
+    private static readonly string[] Summaries =
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
@@ -21,9 +21,9 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-    
+
     /// <summary>
-    /// This endpoint takes no arguments, and gives you the weather forecast
+    ///     This endpoint takes no arguments, and gives you the weather forecast
     /// </summary>
     /// <returns>A JSON object describing the weather forecast</returns>
     [HttpGet(Name = "GetWeatherForecast")]

@@ -14,10 +14,9 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "My Api TiTLE",
-        Description = "Looky description",
-       
+        Description = "Looky description"
     });
-    
+
     // using System.Reflection; Add the <summary> tags to swagger
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
