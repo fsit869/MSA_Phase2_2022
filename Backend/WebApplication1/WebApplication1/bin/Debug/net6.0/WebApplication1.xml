@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication1</name>
+    </assembly>
+    <members>
+        <member name="T:WebApplication1.Controllers.WeatherForecastController">
+            <summary>
+            This is the weather forecast controller that comes as a default from the project template when creating
+            a new c# Web API application.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Controllers.WeatherForecastController.Get">
+            <summary>
+            This endpoint takes no arguments, and gives you the weather forecast
+            </summary>
+            <returns>A JSON object describing the weather forecast</returns>
+        </member>
+    </members>
+</doc>

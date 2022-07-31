@@ -25,3 +25,5 @@ D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebA
 D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.xml
+D:\Files\UniWork\Workspace\MSA_2022\MSA_Phase2_2022\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.xml
