@@ -1,5 +1,7 @@
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using WebApplication1.model;
 
 var builder = WebApplication.CreateBuilder(args);
 // https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio
@@ -9,12 +11,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+// Connect DB 
+builder.Services.AddDbContext<TodoContext>(opt =>
+    opt.UseInMemoryDatabase("TodoList"));
 
 // Dependency Injection. Link reddit with this URI
-builder.Services.AddHttpClient("reddit", configureClient: client =>
-{
-    client.BaseAddress = new Uri("https://returnyoutubedislikeapi.com");
-});
+builder.Services.AddHttpClient("reddit",
+    client => { client.BaseAddress = new Uri("https://returnyoutubedislikeapi.com"); });
 
 builder.Services.AddSwaggerGen(options =>
 {

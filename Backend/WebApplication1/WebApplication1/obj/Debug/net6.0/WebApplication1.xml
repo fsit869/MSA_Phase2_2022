@@ -41,7 +41,7 @@
         </member>
         <member name="M:WebApplication1.Controllers.ExternalApiController.GetRawRedditHotPosts">
             <summary>
-            Gets the raw JSON for the hot feed in reddit
+                Gets the raw JSON for the hot feed in reddit
             </summary>
             <returns>A JSON object representing the hot feed in reddit</returns>
         </member>

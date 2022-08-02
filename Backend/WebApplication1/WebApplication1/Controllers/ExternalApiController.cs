@@ -7,17 +7,16 @@ namespace WebApplication1.Controllers;
 public class ExternalApiController : ControllerBase
 {
     private readonly HttpClient _client;
+
     /// <summary />
     public ExternalApiController(IHttpClientFactory clientFactory)
     {
-        if (clientFactory is null)
-        {
-            throw new ArgumentNullException(nameof(clientFactory));
-        }
+        if (clientFactory is null) throw new ArgumentNullException(nameof(clientFactory));
         _client = clientFactory.CreateClient("reddit");
     }
+
     /// <summary>
-    /// Gets the raw JSON for the hot feed in reddit
+    ///     Gets the raw JSON for the hot feed in reddit
     /// </summary>
     /// <returns>A JSON object representing the hot feed in reddit</returns>
     [HttpGet]
