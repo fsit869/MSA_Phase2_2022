@@ -44,13 +44,15 @@ builder.Services.AddSwaggerGen(options =>
 // DEMO DiFFERENT PROFILES https://www.daveabrock.com/2021/01/19/config-top-level-programs/
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json")
+    .AddJsonFile("appsettings.Development.json")
     .Build();
-
+// ALL WE DO IS CHANGE ADDJSONFILE TO CHANGE APPSETTINGS
 var region = config["Region"];
 var key = config["Key"];
 Console.WriteLine($"APP PROFILE DEMO: Starting server in {region}!");
 Console.WriteLine($"Using Key {key}!");
+
+
 
 var app = builder.Build();
 
