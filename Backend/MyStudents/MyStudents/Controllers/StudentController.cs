@@ -9,6 +9,9 @@ using MyStudents.Models;
 
 namespace MyStudents.Controllers
 {
+    /// <summary>
+    /// Contains the controller for the Student Table
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
@@ -19,7 +22,10 @@ namespace MyStudents.Controllers
         {
             _context = context;
         }
-
+        /// <summary>
+        /// Get all students in table
+        /// </summary>
+        /// <returns>List of students</returns>
         // GET: api/Student
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
@@ -30,7 +36,12 @@ namespace MyStudents.Controllers
           }
             return await _context.Students.ToListAsync();
         }
-
+        
+        /// <summary>
+        /// Get specific student based on their ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>One student details</returns>
         // GET: api/Student/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(long id)
@@ -48,7 +59,13 @@ namespace MyStudents.Controllers
 
             return student;
         }
-
+        
+        /// <summary>
+        /// Add/patch a new student
+        /// </summary>
+        /// <param name="id">Student ID ID</param>
+        /// <param name="student">Studnet details as JSON</param>
+        /// <returns></returns>
         // PUT: api/Student/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -80,6 +97,12 @@ namespace MyStudents.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Add/patch a new student
+        /// </summary>
+        /// <param name="id">Student ID ID</param>
+        /// <param name="student">Studnet details as JSON</param>
+        /// <returns></returns>
         // POST: api/Student
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -94,7 +117,12 @@ namespace MyStudents.Controllers
 
             return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, student);
         }
-
+    
+        /// <summary>
+        /// Delete a student based on ID
+        /// </summary>
+        /// <param name="id">ID to delete</param>
+        /// <returns>Result</returns>
         // DELETE: api/Student/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudent(long id)
