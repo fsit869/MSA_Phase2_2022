@@ -29,8 +29,11 @@ builder.Services.AddSwaggerGen(options =>
     
 });
 
-
-
+// Inject youtube dislike URI
+builder.Services.AddHttpClient("yt_dislike", configureClient: client =>
+{
+    client.BaseAddress = new Uri("https://returnyoutubedislikeapi.com");
+});
 
 var app = builder.Build();
 
