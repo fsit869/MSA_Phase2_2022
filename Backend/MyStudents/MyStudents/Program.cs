@@ -35,6 +35,17 @@ builder.Services.AddHttpClient("yt_dislike", configureClient: client =>
     client.BaseAddress = new Uri("https://returnyoutubedislikeapi.com");
 });
 
+// Get appsetting config settings
+var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.Development.json")
+    .Build();
+// ALL WE DO IS CHANGE ADDJSONFILE TO CHANGE APPSETTINGS
+var region = config["Region"];
+var key = config["Key"];
+Console.WriteLine($"APP PROFILE DEMO: Starting server in {region}!");
+Console.WriteLine($"Using Key {key}!");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
