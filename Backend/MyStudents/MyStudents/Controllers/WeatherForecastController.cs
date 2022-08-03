@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyStudents.Controllers;
-
+/// <summary>
+/// This is default template controller
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
@@ -17,7 +19,11 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-
+    
+    /// <summary>
+    /// Example get call to get random weather
+    /// </summary>
+    /// <returns>Weather temp</returns>
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
