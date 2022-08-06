@@ -10,17 +10,19 @@ import {NewTask} from "../components/NewTask";
  * @author Frank Situ
  */
 function MainPage() {
-    const [videoList, setVideoList] = useState<any | any>([])
+    const [videoList, setVideoList] = useState<any | any>({})
 
     const addNewComponentToList = (videoID: string) => {
-        let newVideo = <VideoComponent videoID={videoID} ></VideoComponent>
-        setVideoList([...videoList, newVideo]);
+        let newVideo = <VideoComponent videoID={videoID} deleteMethod={deleteComponentInList}></VideoComponent>;
+        setVideoList({...videoList, [videoID]: newVideo})
     }
 
-    const deleteComponentInList = (componentID: string) => {
-
+    const deleteComponentInList = (videoID: string) => {
+        console.log("Deleting");
+        const oldVideos = {...videoList};
+        delete oldVideos[videoID];
+        setVideoList(oldVideos);
     }
-
 
     return (
         <div>
@@ -28,24 +30,18 @@ function MainPage() {
 
             <Grid container spacing={2} justifyContent="center" >
 
-                {videoList.map((currentVideo: JSX.Element) => (
-                    <Grid item>
-                        {currentVideo}
+                {/*{videoList.map((currentVideo: JSX.Element) => (*/}
+                {/*    <Grid item>*/}
+                {/*        {currentVideo}*/}
+                {/*    </Grid>*/}
+                {/*))}*/}
+
+                {Object.keys(videoList).map(function(key, index) {
+                    return <Grid item>
+                        {videoList[key]}
                     </Grid>
-                ))}
+                })}
 
-
-                <Grid item>
-                    <Button onClick={() => {
-                        console.log(videoList);
-                    }}>ew</Button>
-                </Grid>
-
-                <Grid item>
-                    <Button onClick={() => {
-                        addNewComponentToList("QH2-TGUlwu4");
-                    }}>ewaddd</Button>
-                </Grid>
             </Grid>
             {/* New task FAB */}
             <NewTask onNewNote={addNewComponentToList}></NewTask>

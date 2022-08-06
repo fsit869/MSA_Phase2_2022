@@ -12,12 +12,13 @@ import {
 } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import VideoObject from "../api/VideoObject";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import getVideoInformation from "../api/YoutubeDislikeApi";
 import {wait} from "@testing-library/user-event/dist/utils";
 
 interface Props {
-    videoID: string
+    videoID: string,
+    deleteMethod: any
 }
 
 export const VideoComponent = (props: Props) => {
@@ -31,7 +32,6 @@ export const VideoComponent = (props: Props) => {
     }, []);
 
     if (loading) return <p>Loading</p>
-
     return <Card sx={{
         maxWidth: 340,
         maxHeight: 350,
@@ -83,10 +83,11 @@ export const VideoComponent = (props: Props) => {
             <Box p={5}></Box>
 
             {/* Delete button */}
-            <IconButton aria-label="Delete Task">
+            <IconButton aria-label="Delete Task" onClick={() =>
+                props.deleteMethod(props.videoID)
+            }>
                 <DeleteIcon></DeleteIcon>
             </IconButton>
-
         </CardActions>
     </Card>;
 }
