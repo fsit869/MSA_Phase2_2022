@@ -20,9 +20,17 @@ export type VideoKeys = {
     deleted: boolean;
 };
 
-export default function getVideoInformation(videoURL: string, setData: React.Dispatch<any>, setLoading:  React.Dispatch<React.SetStateAction<boolean>>) {
+export default function getVideoInformation(videoURL: string, setData: React.Dispatch<any>, setLoading:  React.Dispatch<React.SetStateAction<boolean>>, setError: React.Dispatch<React.SetStateAction<boolean>>) {
     axios.get<VideoKeys>('https://returnyoutubedislikeapi.com/votes?videoId=' + videoURL).then((res) => {
+        console.log("AAHHHH")
+        console.log(res)
+        console.log("AAHHHH")
         setData(res.data);
         setLoading(false);
+        setError(false);
+    }).catch((error) => {
+        console.log(error);
+        setLoading(false);
+        setError(true);
     })
 }

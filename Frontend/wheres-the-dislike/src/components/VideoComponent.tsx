@@ -28,10 +28,12 @@ export const VideoComponent = (props: Props) => {
     // let apiData = null;
     useEffect(() => {
         // Update the document title using the browser API
-        getVideoInformation(props.videoID, setVideoDetails, setLoading);
+        getVideoInformation(props.videoID, setVideoDetails, setLoading, setError);
     }, []);
 
     if (loading) return <p>Loading</p>
+    // if (error) return <p>Error</p>
+
     return <Card sx={{
         maxWidth: 340,
         maxHeight: 350,
@@ -40,7 +42,7 @@ export const VideoComponent = (props: Props) => {
     }}>
         {/*Header*/}
         <CardHeader
-            title="Video"
+            title={props.videoID}
             subheader={"wow a subheading"}
             subheaderTypographyProps={{variant: "subtitle2"}}
             sx={{
@@ -69,16 +71,18 @@ export const VideoComponent = (props: Props) => {
                 textAlign: "right",
             }}
         >
+            {error ? <p>Video could not be found</p> : <div>
+                <Typography variant="body2" align="left" component="p">
+                    Likes: {videoDetails.likes}
+                </Typography>
+                <Typography variant="body2" align="left" component="p">
+                    Dislikes: {videoDetails.dislikes}
+                </Typography>
+                <Typography variant="body2" align="left" component="p">
+                    Rating: {videoDetails.rating.toString().substring(0, 3)} / 5
+                </Typography>
+            </div>}
 
-            <Typography variant="body2" align="left" component="p">
-                Likes: {videoDetails.likes}
-            </Typography>
-            <Typography variant="body2" align="left" component="p">
-                Dislikes: {videoDetails.dislikes}
-            </Typography>
-            <Typography variant="body2" align="left" component="p">
-                Rating: {videoDetails.rating.toString().substring(0, 3)} / 5
-            </Typography>
 
             <Box p={5}></Box>
 
