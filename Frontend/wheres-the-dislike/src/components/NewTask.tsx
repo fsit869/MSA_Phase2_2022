@@ -70,7 +70,7 @@ export const NewTask = (props: Props) => {
                 <DialogContent>
                     {/* Descriptor  */}
                     <DialogContentText>
-                        Add the youtube video ID. EG: "QH2-TGUlwu4"
+                        Add the youtube video ID. EG: "QH2-TGUlwu4", "iiZXZt830l0"
                     </DialogContentText>
 
                     {/* Title textfield */}
