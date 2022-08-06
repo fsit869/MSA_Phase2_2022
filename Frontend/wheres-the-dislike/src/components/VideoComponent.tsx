@@ -22,6 +22,7 @@ interface Props {
 
 export const VideoComponent = (props: Props) => {
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(true);
     const [videoDetails, setVideoDetails] = useState<undefined | any>(undefined);
     // let apiData = null;
     useEffect(() => {

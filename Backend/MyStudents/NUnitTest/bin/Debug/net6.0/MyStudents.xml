@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyStudents</name>
+    </assembly>
+    <members>
+        <member name="T:MyStudents.Controllers.StudentController">
+            <summary>
+            Contains the controller for the Student Table
+            </summary>
+        </member>
+        <member name="M:MyStudents.Controllers.StudentController.GetStudents">
+            <summary>
+            Get all students in table
+            </summary>
+            <returns>List of students</returns>
+        </member>
+        <member name="M:MyStudents.Controllers.StudentController.GetStudent(System.Int64)">
+            <summary>
+            Get specific student based on their ID
+            </summary>
+            <param name="id"></param>
+            <returns>One student details</returns>
+        </member>
+        <member name="M:MyStudents.Controllers.StudentController.PutStudent(System.Int64,MyStudents.Models.Student)">
+            <summary>
+            Add/patch a new student
+            </summary>
+            <param name="id">Student ID ID</param>
+            <param name="student">Studnet details as JSON</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyStudents.Controllers.StudentController.PostStudent(MyStudents.Models.Student)">
+            <summary>
+            Add/patch a new student
+            </summary>
+            <param name="id">Student ID ID</param>
+            <param name="student">Studnet details as JSON</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyStudents.Controllers.StudentController.DeleteStudent(System.Int64)">
+            <summary>
+            Delete a student based on ID
+            </summary>
+            <param name="id">ID to delete</param>
+            <returns>Result</returns>
+        </member>
+        <member name="T:MyStudents.Controllers.WeatherForecastController">
+            <summary>
+            This is default template controller
+            </summary>
+        </member>
+        <member name="M:MyStudents.Controllers.WeatherForecastController.Get">
+            <summary>
+            Example get call to get random weather
+            </summary>
+            <returns>Weather temp</returns>
+        </member>
+        <member name="T:MyStudents.Controllers.YoutubeDislikeController">
+            <summary>
+            Controller to interact with youtube dislike API
+            </summary>
+        </member>
+        <member name="M:MyStudents.Controllers.YoutubeDislikeController.GetVideoDetails(System.String)">
+            <summary>
+            Get dislikes, likes and views from a youtube video
+            </summary>
+            <param name="videoID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MyStudents.Controllers.YoutubeDislikeController.GetDiagonostics">
+            <summary>
+            Tests the connection to the Youtube dislike API
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
