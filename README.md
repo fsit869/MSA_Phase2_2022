@@ -16,9 +16,9 @@ Requirements
 <h1> Backend </h1>
 
 - Create at least one controller that implements CRUD operations for a resource (Create, Read, Update, Delete).
-        - Created a student table using inbuilt DB, supports CRUD operations
+        - Created a student table using inmemory DB, supports CRUD operations
 - Call at least one other API.
-        - Calls YoutubeDislike API
+        - Calls YoutubeDislike API. external RESTAPI "https://returnyoutubedislike.com/"
 - Create at least two configuration files, and demonstrate the differences between starting the project with one file over another.
         - Contains two config files. Each config file has a different "key" and "region"
         - When program starts it prints the corresponding config files key and region to demonstrate different config files        
