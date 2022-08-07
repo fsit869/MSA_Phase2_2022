@@ -1,5 +1,8 @@
 namespace MyStudents.Models;
 
+/**
+ * POCO file. Represents a student
+ */
 public class Student
 {
     public long Id { get; set; }

@@ -9,9 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// Add DB
+// Add In built memory DB
 builder.Services.AddDbContext<StudentContext>(opt => opt.UseInMemoryDatabase("Student"));
-
 
 // Setup XML tags
 builder.Services.AddSwaggerGen(options =>
@@ -40,6 +39,7 @@ var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.Development.json")
     .Build();
+
 // ALL WE DO IS CHANGE ADDJSONFILE TO CHANGE APPSETTINGS
 var region = config["Region"];
 var key = config["Key"];
