@@ -1,3 +1,6 @@
+/**
+ * ADT. Represents all data of a video
+ */
 export default class VideoObject {
 
     public videoID: string;

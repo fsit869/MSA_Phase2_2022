@@ -4,6 +4,10 @@ import InfoIcon from '@mui/icons-material/Info';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {useState} from "react";
 
+/**
+ * Sidebar
+ * @constructor
+ */
 export const SideBar = (): JSX.Element => {
     const [aboutDialogueOpen, setAboutDialogueOpen] = useState(false);
     return (
