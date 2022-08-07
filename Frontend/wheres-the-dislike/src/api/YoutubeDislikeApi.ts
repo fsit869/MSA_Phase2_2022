@@ -1,13 +1,3 @@
-// import VideoObject from "./VideoObject";
-//
-// interface videoDetails {
-//
-// }
-//
-// export const getVideoInformation = (videoURL:string) => {
-//     let rfe: VideoObject = new VideoObject("abc", "bcd", 2, 2, 2);
-// }
-
 
 import axios from 'axios';
 
@@ -20,15 +10,22 @@ export type VideoKeys = {
     deleted: boolean;
 };
 
+/**
+ * Fetch from external API like/dislike data about video
+ * @param videoURL
+ * @param setData
+ * @param setLoading
+ * @param setError
+ */
 export default function getVideoInformation(videoURL: string, setData: React.Dispatch<any>, setLoading:  React.Dispatch<React.SetStateAction<boolean>>, setError: React.Dispatch<React.SetStateAction<boolean>>) {
     axios.get<VideoKeys>('https://returnyoutubedislikeapi.com/votes?videoId=' + videoURL).then((res) => {
-        console.log("AAHHHH")
+        // Successful fetch
         console.log(res)
-        console.log("AAHHHH")
         setData(res.data);
         setLoading(false);
         setError(false);
     }).catch((error) => {
+        // Failed fetch
         console.log(error);
         setLoading(false);
         setError(true);

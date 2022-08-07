@@ -16,24 +16,37 @@ import React, {useEffect, useState} from "react";
 import getVideoInformation from "../api/YoutubeDislikeApi";
 import {wait} from "@testing-library/user-event/dist/utils";
 
+/**
+ * VideoID: Youtube video ID
+ * DeleteMethod: Method called to delete this component
+ */
 interface Props {
     videoID: string,
     deleteMethod: any
 }
 
+/**
+ * Represents a video component
+ * @param props
+ * @constructor
+ */
 export const VideoComponent = (props: Props) => {
+    // Store note settings
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(true);
     const [videoDetails, setVideoDetails] = useState<undefined | any>(undefined);
-    // let apiData = null;
+
+    // Fetch dislike data
     useEffect(() => {
         // Update the document title using the browser API
         getVideoInformation(props.videoID, setVideoDetails, setLoading, setError);
     }, []);
 
+    // If error
     if (loading) return <p>Loading</p>
-    // if (error) return <p>Error</p>
 
+
+    // Video card
     return <Card sx={{
         maxWidth: 340,
         maxHeight: 350,
@@ -71,6 +84,8 @@ export const VideoComponent = (props: Props) => {
                 textAlign: "right",
             }}
         >
+
+            {/*Dislike data*/}
             {error ? <p>Video could not be found</p> : <div>
                 <Typography variant="body2" align="left" component="p">
                     Likes: {videoDetails.likes}

@@ -12,11 +12,19 @@ import {NewTask} from "../components/NewTask";
 function MainPage() {
     const [videoList, setVideoList] = useState<any | any>({})
 
+    /**
+     * Add new video component
+     * @param videoID
+     */
     const addNewComponentToList = (videoID: string) => {
         let newVideo = <VideoComponent videoID={videoID} deleteMethod={deleteComponentInList}></VideoComponent>;
         setVideoList({...videoList, [videoID]: newVideo})
     }
 
+    /**
+     * Delete video component
+     * @param videoID
+     */
     const deleteComponentInList = (videoID: string) => {
         console.log("Deleting");
         const oldVideos = {...videoList};
@@ -29,13 +37,7 @@ function MainPage() {
             <Box p={4}/>
 
             <Grid container spacing={2} justifyContent="center" >
-
-                {/*{videoList.map((currentVideo: JSX.Element) => (*/}
-                {/*    <Grid item>*/}
-                {/*        {currentVideo}*/}
-                {/*    </Grid>*/}
-                {/*))}*/}
-
+                {/*Render video compnents*/}
                 {Object.keys(videoList).map(function(key, index) {
                     return <Grid item>
                         {videoList[key]}

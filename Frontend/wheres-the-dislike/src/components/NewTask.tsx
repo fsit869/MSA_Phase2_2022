@@ -16,6 +16,11 @@ interface Props {
     onNewNote: any
 }
 
+/**
+ * FAB to create a new task
+ * @param props
+ * @constructor
+ */
 export const NewTask = (props: Props) => {
     const [open, setOpen] = useState(false); // State checking if dialogue open/Closed
     const [ID, setID] = useState(""); // Title var
