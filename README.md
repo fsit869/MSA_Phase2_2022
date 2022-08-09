@@ -31,7 +31,7 @@ Requirements
 - Demonstrate an understanding of why the middleware libraries made your code easier to test.
         - Explained in PDF
         
-<h1> Backend explainations </h1>
+<h2> Backend explainations </h2>
 <p>They are listed in BackendDemos.pdf, but for clarity it will be written here as well </p>
 
 <b>Demonstrate an understanding how middleware via DI simplifies your code:</b>
@@ -55,7 +55,7 @@ modular. Breaking the code into pieces, makes it easier to manage and thus simpl
 </p>
 
 
-<b>Demonstrate an understanding of why middleware libraries made your code easier to test:</b>
+<h2>Demonstrate an understanding of why middleware libraries made your code easier to test:</h2>
 
 <p>
 Middleware libraries make your code easier to test, by breaking functionalities into separate
